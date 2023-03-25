@@ -9,10 +9,11 @@ export default class App extends Component {
             <div>
                 <Hello />
                 <Message />
-                <Welcome name="Ozkan" />
+                <Welcome />
             </div>
         )
     }
 }
 
-
+/* If no name prop is passed to the Welcome component, it goes on excuting without name 
+or if we set a default value for name, the default value returns whenever we do not set the name. */

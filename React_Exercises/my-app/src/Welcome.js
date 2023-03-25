@@ -8,3 +8,11 @@ export class Welcome extends Component {
         )
     }
 }
+
+Welcome.defaultProps = {
+    name : "Yilmaz"
+}
+
+/* If no name prop is passed to the Welcome component, it goes on excuting without name 
+or if we set a default value for name, the default value (Welcome.defaultProps) returns 
+whenever the name prop is passed to the Welcome component. */
