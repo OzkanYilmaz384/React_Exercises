@@ -3,7 +3,10 @@ import React, { Component } from "react";
 export class Age extends Component {
     render() {
         return (
-            <p>Your age is {this.props.age}</p>
+            <p>{this.props.age > 18 
+                ? `Your age is ${this.props.age}`
+                : `You are very young!`
+                }</p>
         )
     }
 }
