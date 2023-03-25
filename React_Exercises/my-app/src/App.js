@@ -11,13 +11,12 @@ export default class App extends Component {
                 <Hello />
                 <Message />
 
-                <Welcome name={<strong>Ozkan</strong>} age={15} />
+                <Welcome name={<strong>Ozkan</strong>} age={25} />
             </div>
         )
     }
 }
 
-/* If want to pass a prop that contains a JSX expression or anything instead of a string,
-    we have to use {}(curly brackets) in place of "".  */
+
 
 
