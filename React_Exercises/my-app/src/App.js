@@ -11,7 +11,7 @@ export default class App extends Component {
             <div>
                 <Hello />
                 <Message />
-                <Counter initialValue={50} incrementAmount={3} incrementInterval={500} />
+                <Counter initialValue={10} incrementAmount={3} incrementInterval={500} />
                 <Welcome name="John" age={15} />
             </div>
         )
