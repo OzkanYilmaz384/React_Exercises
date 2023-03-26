@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Hello from "./Hello";
 import Message from "./Message";
 import { Welcome } from "./Welcome";
+import { Counter } from "./Counter";
 // import Age from "./Age";
 
 export default class App extends Component {
@@ -10,7 +11,7 @@ export default class App extends Component {
             <div>
                 <Hello />
                 <Message />
-
+                <Counter />
                 <Welcome name="John" age={15} />
             </div>
         )
