@@ -6,13 +6,14 @@ export class Counter extends Component {
         count: this.props.initialValue,
     }
 
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
+    componentDidMount(){    // If we use componentDidMount, the constructor is not required.
 
         setInterval(() => {
-            this.setState((state) => {
-                return ( state.count < 10 * this.props.initialValue
-                    ? {count: state.count + this.props.incrementAmount}
+            this.setState(() => {
+                return ( this.state.count < 10 * this.props.initialValue
+                    ? {count: this.state.count + this.props.incrementAmount}
                     : {count: this.props.initialValue} )
             })
         }, this.props.incrementInterval)
