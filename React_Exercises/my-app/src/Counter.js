@@ -10,7 +10,7 @@ export class Counter extends Component {
     //     super(props)
     componentDidMount(){    // If we use componentDidMount, the constructor is not required.
 
-        setInterval(() => {
+        this._interval = setInterval(() => {
             this.setState(() => {
                 return ( this.state.count < 10 * this.props.initialValue
                     ? {count: this.state.count + this.props.incrementAmount}
@@ -18,10 +18,15 @@ export class Counter extends Component {
             })
         }, this.props.incrementInterval)
     }
+
+    // componentWillUnmount() {
+    //     if(this._interval) clearInterval(this._interval)
+    // }
+
     render() {
         return (
         <div>
-            <h1>Count : {this.state.count}</h1>
+            {this.state.count < 50 && <h1>Count : {this.state.count}</h1>}
             
             <CounterDisplay count={this.state.count} />
         </div>
