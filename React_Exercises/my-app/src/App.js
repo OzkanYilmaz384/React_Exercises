@@ -3,6 +3,7 @@ import Hello from "./Hello";
 import Message from "./Message";
 import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
+import { ClickCounter } from "./ClickCounter";
 // import Age from "./Age";
 
 export default class App extends Component {
@@ -13,6 +14,7 @@ export default class App extends Component {
                 <Message />
                 <Counter initialValue={10} incrementAmount={3} incrementInterval={500} />
                 <Welcome name="John" age={15} />
+                <ClickCounter />
             </div>
         )
     }
