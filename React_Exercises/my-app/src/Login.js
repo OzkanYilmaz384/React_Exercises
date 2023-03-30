@@ -1,8 +1,5 @@
 import { Component } from "react";
 
-const onLogin = () => {
-        
-}
 
 class Login extends Component {
     // constructor(props) {
@@ -16,6 +13,8 @@ class Login extends Component {
            
      }
 
+    
+
 
     handleChanged = (event) => {
         const target = event.target;
@@ -26,9 +25,16 @@ class Login extends Component {
             [name]: value,   
             login: (this.state.username === "" || this.state.password === "") ? true : false,
         }    
-        );
-        
-        
+        );   
+    }
+
+    clearForm = () => {
+        this.setState({
+            username: "",
+            password: "",
+            remember: false,
+            login: true
+        })
     }
     
 
@@ -43,8 +49,10 @@ class Login extends Component {
                 <input type="text" name="username" value={this.state.username} onChange={this.handleChanged}/>
                 <input type="password" name="password" value={this.state.password} onChange={this.handleChanged}/>
                 <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleChanged}/>
-                
-                <button type="button" name="login" disabled={this.state.login} onClick={onLogin}>Login</button>
+
+                <button type="button" name="login" disabled={this.state.login} onClick={this.props.onLogin}>Login</button>
+
+                <button type="button" name="reset" onClick={this.clearForm}>Clear</button>
             </form>
          );
     }
