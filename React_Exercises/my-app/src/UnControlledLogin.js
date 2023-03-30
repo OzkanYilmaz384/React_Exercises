@@ -1,9 +1,16 @@
-import { Component } from "react";
+import { Component, createRef } from "react";
 
 export class UnControlledLogin extends Component {
+
+    userNameRef = createRef();
+
+    componentDidMount() {
+        this.userNameRef.current.focus();
+    }
    
     handleUncontrolledChange = (event) => {
         event.preventDefault();
+
         const username = event.target.elements.username.value;
         const password = event.target.elements.password.value;
         const remember = event.target.elements.remember.checked;
@@ -14,12 +21,13 @@ export class UnControlledLogin extends Component {
             remember
         });
     }
+
    
     render() {
 
         return (
-            <form onSubmit={this.handleUncontrolledChange}>
-                <input name="username" type="text"/>
+            <form onSubmit={this.handleUncontrolledChange} onChange={this.checkLoginButton}>
+                <input ref={this.userNameRef} name="username" type="text"/>
                 <input name="password" type="password"/>
                 <input name="remember"type="checkbox"/>
 
