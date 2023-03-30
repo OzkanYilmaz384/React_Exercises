@@ -3,6 +3,9 @@ import { Component, createRef } from "react";
 export class UnControlledLogin extends Component {
 
     userNameRef = createRef();
+    passwordRef = createRef();
+    rememberRef = createRef();
+    submitRef = createRef();
 
     componentDidMount() {
         this.userNameRef.current.focus();
@@ -22,16 +25,22 @@ export class UnControlledLogin extends Component {
         });
     }
 
+    checkLoginButton = () => {
+        (this.userNameRef.current.value.length > 0 && this.passwordRef.current.value.length > 0)
+        ?  this.submitRef.current.disabled = false
+        : this.submitRef.current.disabled = true;
+    }
+
    
     render() {
 
         return (
             <form onSubmit={this.handleUncontrolledChange} onChange={this.checkLoginButton}>
                 <input ref={this.userNameRef} name="username" type="text"/>
-                <input name="password" type="password"/>
-                <input name="remember"type="checkbox"/>
+                <input ref={this.passwordRef} name="password" type="password"/>
+                <input ref={this.rememberRef} name="remember"type="checkbox"/>
 
-                <button type="submit">Login</button>
+                <button ref={this.submitRef} type="submit" disabled>Login</button>
                 <button type="reset">Clear</button>
             </form>
         )
