@@ -15,12 +15,13 @@ class TodoList extends Component {
             this.setState({
                 items: [...this.state.items, item],
             });
+            inputRef.current.value = "";
          }
 
         return ( 
             <div>
                 <ul>
-                    {this.state.items.map((item) => <li>{item}</li> )}
+                    {this.state.items.map((item, index) => <li key={item + index}>{item}</li> )}
                 </ul>
                 
                 <input name="input" type="text" ref={inputRef}></input>
