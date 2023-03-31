@@ -18,6 +18,10 @@ class TodoList extends Component {
             inputRef.current.value = "";
          }
 
+         const resetList = () => {
+            this.setState({items: []});
+         }
+
         return ( 
             <div>
                 <ul>
@@ -26,6 +30,7 @@ class TodoList extends Component {
                 
                 <input name="input" type="text" ref={inputRef}></input>
                 <button onClick={addToList}>Click to Add!</button>
+                <button onClick={resetList}>Reset</button>
                 
             </div>
          );
