@@ -5,7 +5,7 @@ import React from "react";
 export class Welcome extends Component {
     render() {
         return (
-            <div>
+            <div className="welcome">
                 {/* <Age age={this.props.age} /> */}
                 <p>Welcome, {this.props.name}</p>
             </div>
