@@ -22,10 +22,23 @@ class TodoList extends Component {
             this.setState({items: []});
          }
 
+         const removeFromList = (deleting) => {
+            this.setState({
+                items: this.state.items.filter((todo, index) => index !== deleting ),
+            })
+         }
+
+
         return ( 
             <div>
                 <ul>
-                    {this.state.items.map((item, index) => <li key={item + index}>{item}</li> )}
+                    {this.state.items.map((item, index) => {
+
+                    return (
+                    <li key={item + index}>{item} 
+                    <button type="button" name="remove" onClick={() => removeFromList(index)}>Remove</button></li>)
+                    } 
+                    )}
                 </ul>
                 
                 <input name="input" type="text" ref={inputRef}></input>
