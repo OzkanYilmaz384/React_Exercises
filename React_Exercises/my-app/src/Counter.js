@@ -24,8 +24,15 @@ export class Counter extends Component {
     // }
 
     render() {
+
+        const MyStyle = {
+            color: "red",
+            backgroundColor: "aqua",
+            margin: "10px"
+        }
+
         return (
-        <div>
+        <div style={MyStyle}>
             {this.state.count < 50 && <h1>Count : {this.state.count}</h1>}
             
             <CounterDisplay count={this.state.count} />
