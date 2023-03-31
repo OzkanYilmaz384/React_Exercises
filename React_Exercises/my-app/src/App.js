@@ -10,7 +10,7 @@ export default class App extends Component {
         return (
             <div>
                 <UnControlledLogin />
-                <Colors items={["blue", "red", "green", "black"]}/>
+                <Colors items={[{id: 1, name: "blue"},{id: 2, name: "red"},{id: 3, name: "green"}]}/>
             </div>
         )
     }
