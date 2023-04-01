@@ -31,19 +31,19 @@ class TodoList extends Component {
 
         return ( 
             <div>
-                <ul>
-                    {this.state.items.map((item, index) => {
-
-                    return (
-                    <li key={item + index}>{item} 
-                    <button type="button" name="remove" onClick={() => removeFromList(index)}>Remove</button></li>)
-                    } 
-                    )}
-                </ul>
-                
                 <input name="input" type="text" ref={inputRef}></input>
                 <button onClick={addToList}>Click to Add!</button>
                 <button onClick={resetList}>Reset</button>
+                
+                <ul>
+                    {/* {this.state.items.map((item, index) => (
+
+                    <li key={item + index}>{item} 
+                    <button type="button" name="remove" onClick={() => removeFromList(index)}>Remove</button></li>)
+                     
+                    )} */}
+                    {this.props.render(this.state.items, removeFromList)}
+                </ul>
                 
             </div>
          );
