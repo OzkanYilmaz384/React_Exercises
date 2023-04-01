@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
-import Login from "./Login";
+import { Container } from "./Container";
 
 
 export default class App extends Component {
     render() {
         return (
             <div>
-                <Login />
+                <Container>
+                    <h2>Hello World</h2>
+                </Container>
             </div>
         )
     }
