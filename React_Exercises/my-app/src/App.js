@@ -20,7 +20,7 @@ export default class App extends Component {
         <div>
             
             <Welcome name= "Ozkan" />
-            <Sum numbers = {[3,5,7,9,11]} />
+            <Sum />
 
         </div>
             
