@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Welcome } from "./Welcome";
 
 import Login from "./Login";
+import { ClickCounter } from "./ClickCounter";
 
 export default class App extends Component {
 
@@ -12,7 +13,7 @@ export default class App extends Component {
             
             <Welcome name= "Ozkan" />
             
-            <Login />
+            <ClickCounter />
 
         </div>
             
