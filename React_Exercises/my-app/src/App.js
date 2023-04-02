@@ -1,26 +1,17 @@
 import React, { Component } from "react";
 
 import { Welcome } from "./Welcome";
-import { Sum } from "./Sum";
+import { ClickCounter } from "./ClickCounter";
 
 export default class App extends Component {
-
-    state = {
-        language: "en"
-    }
-    
-    handleLanguageChange = (event) => {
-        this.setState({
-            language: event.target.value,
-        })
-    }
 
     render() {
         return (
         <div>
             
             <Welcome name= "Ozkan" />
-            <Sum />
+            
+            <ClickCounter initialValue={10} />
 
         </div>
             
