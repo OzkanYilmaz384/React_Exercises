@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import { UnControlledLogin } from "./UnControlledLogin";
-import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
+import { Welcome } from "./Welcome";
 
 export default class App extends Component {
 
@@ -19,16 +17,8 @@ export default class App extends Component {
     render() {
         return (
         <div>
-            <select value={this.state.language} onChange={this.handleLanguageChange}>
-                <option value="English">ENGLISH</option>
-                <option value="Turkish">TURKISH</option>
-                <option value="Spanish">SPANISH</option>
-            </select>
-            <UnControlledLogin />
-
-            <LanguageContext.Provider value= {this.state.language}>
-                <DisplayLanguage />
-            </LanguageContext.Provider>
+            
+            <Welcome name= "Ozkan" />
 
         </div>
             
