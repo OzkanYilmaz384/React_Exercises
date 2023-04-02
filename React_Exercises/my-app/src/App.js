@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import { Welcome } from "./Welcome";
-import { ClickCounter } from "./ClickCounter";
+
+import Login from "./Login";
 
 export default class App extends Component {
 
@@ -11,7 +12,7 @@ export default class App extends Component {
             
             <Welcome name= "Ozkan" />
             
-            <ClickCounter initialValue={10} />
+            <Login />
 
         </div>
             

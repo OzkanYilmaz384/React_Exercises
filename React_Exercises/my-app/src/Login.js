@@ -1,61 +1,31 @@
-import { Component } from "react";
+import React, { useState } from "react"
 
+export default function Login () {
 
-class Login extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-    state = { 
+    const [data, setData] = useState({
         username: "",
         password: "",
-        remember: false,
-        login: true
-           
-     }
+        remember: false
+    })
 
-    
+    const handleLogin = (e) => {
 
-
-    handleChanged = (event) => {
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
+        const {name, type, value, checked} = e.target
         
-        this.setState({
-            [name]: value,   
-            login: (this.state.username === "" || this.state.password === "") ? true : false,
-        }    
-        );   
+            setData({
+                ...data,
+                [name] : type === "checkbox" ? checked : value,
+            })
     }
 
-    clearForm = () => {
-        this.setState({
-            username: "",
-            password: "",
-            remember: false,
-            login: true
-        })
-    }
-    
-
-    componentDidUpdate() {
-        console.log(this.state);
-
-    }
-
-    render() { 
-        return ( 
-            <form>
-                <input type="text" name="username" value={this.state.username} onChange={this.handleChanged}/>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChanged}/>
-                <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleChanged}/>
-
-                <button type="button" name="login" disabled={this.state.login} onClick={this.props.onLogin}>Login</button>
-
-                <button type="button" name="reset" onClick={this.clearForm}>Clear</button>
-            </form>
-         );
-    }
+    return (
+        <form>
+            <input onChange={handleLogin} name="username" type="text" value={data.username} />
+            <input onChange={handleLogin} name="password" type="password" value={data.password} />
+            <input onChange={handleLogin} name="remember" type="checkbox" checked={data.remember} />
+            <button type="button" name="login">Login</button>
+            <button type="reset" name="reset">Reset</button>
+        </form>
+    )
 }
- 
-export default Login;
+
