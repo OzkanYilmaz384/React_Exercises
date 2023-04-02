@@ -10,7 +10,7 @@ export class DisplayLanguage extends Component {
             <LanguageContext.Consumer>
                 {(language) => (
                     <div>
-                        <p>The current language is : {language}</p>
+                        <h1>The current language is : {language}</h1>
                     </div>
                 )}
             </LanguageContext.Consumer>

@@ -20,9 +20,9 @@ export default class App extends Component {
         return (
         <div>
             <select value={this.state.language} onChange={this.handleLanguageChange}>
-                <option value="en">English</option>
-                <option value="tr">Turkish</option>
-                <option value="sp">Spanish</option>
+                <option value="English">ENGLISH</option>
+                <option value="Turkish">TURKISH</option>
+                <option value="Spanish">SPANISH</option>
             </select>
             <UnControlledLogin />
 
