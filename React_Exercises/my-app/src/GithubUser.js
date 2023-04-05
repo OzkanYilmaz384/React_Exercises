@@ -10,8 +10,6 @@ export function GithubUser({username}) {
             return response.json()
         })
         .then(json => {
-            console.log(json);
-
             setData(json);
         })
         
@@ -20,7 +18,7 @@ export function GithubUser({username}) {
     
     return(
         <div>
-          Login Name: {data && <h1>{data.login}</h1>} ID: {data && <h1> {data.id} </h1>} 
+          Login Name: {data && <h3>{data.login}</h3>} ID: {data && <h3> {data.id} </h3>} 
         </div>
     )
 }
