@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 import { Welcome } from "./Welcome";
 
-import Login from "./Login";
-import { ClickCounter } from "./ClickCounter";
+import { GithubUser } from "./GithubUser";
 
 export default class App extends Component {
 
@@ -13,7 +12,7 @@ export default class App extends Component {
             
             <Welcome name= "Ozkan" />
             
-            <ClickCounter />
+            <GithubUser  username="OzkanYilmaz384"/>
 
         </div>
             
