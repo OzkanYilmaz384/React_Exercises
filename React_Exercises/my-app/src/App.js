@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Welcome } from "./Welcome";
 
 import { Counter } from "./Counter";
-import Login from "./Login";
+import { GithubUser } from "./GithubUser";
 
 export default class App extends Component {
 
@@ -13,9 +13,7 @@ export default class App extends Component {
             
             <Welcome name= "Ozkan" />
             
-            <Counter initialValue={7}/>
-
-            <Login />
+            <GithubUser username="OzkanYilmaz384" />
 
         </div>
             
