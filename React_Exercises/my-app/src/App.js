@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { Welcome } from "./Welcome";
 
-import { Counter } from "./Counter";
 import { GithubUser } from "./GithubUser";
 
 export default class App extends Component {

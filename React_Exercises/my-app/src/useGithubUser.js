@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
 
 export const useGithubUser = ({username}) => {
-    const [data, setData] = useState(null);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false)
 
-    useEffect( () => {
-        fetch(`https://api.github.com/users/${username}`)
-        .then(response => {
-            return response.json()
-        })
-        .then(json => {
-            setData(json);
-        })
-        
-    }, [username] )
-
-    return {
-        data: data
+    async function fetchUser(username) {
+        try {
+            const response = await fetch(`https://api.github.com/users/${username}`)
+            const data = await response.json()
+            setUser(data)
+        } catch(err) {
+            setError(true)
+        } finally{
+            setLoading(false)
+        }
     }
+
+    useEffect(() => {
+        fetchUser(username)
+    }, [username])
+
+    return [user, loading, error]
 
 }
