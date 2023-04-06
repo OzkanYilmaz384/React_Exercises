@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 export default function Login () {
 
@@ -7,6 +7,12 @@ export default function Login () {
         password: "",
         remember: false
     })
+
+    const loginRef = useRef();
+
+    useEffect(() => {
+        loginRef.current.focus();
+    }, [])
 
     const handleLogin = (e) => {
 
@@ -20,7 +26,7 @@ export default function Login () {
 
     return (
         <form>
-            <input onChange={handleLogin} name="username" type="text" value={data.username} />
+            <input ref={loginRef} onChange={handleLogin} name="username" type="text" value={data.username} />
             <input onChange={handleLogin} name="password" type="password" value={data.password} />
             <input onChange={handleLogin} name="remember" type="checkbox" checked={data.remember} />
             <button type="button" name="login">Login</button>
