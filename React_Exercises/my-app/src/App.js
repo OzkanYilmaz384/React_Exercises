@@ -2,7 +2,7 @@ import React from "react";
 
 import { Welcome } from "./Welcome";
 
-import Login from "./Login";
+import CarDetails from "./CarDetails";
 
 export default function App () {
 
@@ -12,7 +12,11 @@ export default function App () {
             
             <Welcome name= "Ozkan" />
             
-            <Login />
+            <CarDetails  initialData={{
+              model: "Superb",
+              year: 2017,
+              color: "white",
+            }}/>
 
         </div>
             
