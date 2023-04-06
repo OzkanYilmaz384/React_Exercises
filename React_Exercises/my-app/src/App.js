@@ -1,24 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { Welcome } from "./Welcome";
 
-import { GithubUser } from "./GithubUser";
-import { Counter } from "./Counter";
+import { FilteredList } from "./FilteredList";
 
-export default class App extends Component {
+export default function App () {
 
-    render() {
-        return (
+    const people = [
+        {id: 1, name: "John", age: 15},
+        {id: 2, name: "Jeremy", age: 25},
+        {id: 3, name: "July", age: 19},
+        {id: 4, name: "Joson", age: 17}
+    ]
+
+    return (
         <div>
             
             <Welcome name= "Ozkan" />
             
-            <Counter initialValue={12} />
+            <FilteredList list={people} />
 
         </div>
             
-        )
-    }
+    )
 }
 
 
