@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 export function ClickCounter ({ initialValue = 0 }) {
     const [count, setCount] = useState(initialValue)
 
-    useEffect(onCounterChange, [count]);
+    useEffect(() => {
+        console.log(`Current count value is : ${count}`);}, [count]);
 
-    function onCounterChange () {
-        console.log(`Current count value is : ${count}`);
-    }
+    // function onCounterChange () {
+    //     console.log(`Current count value is : ${count}`);
+    // }
 
 
     return (
