@@ -1,5 +1,6 @@
 
 import { ClickCounter } from "./ClickCounter";
+import NotFound from "./NotFound";
 import ShowGithubUser from "./ShowGithubUser";
 import { Welcome } from "./Welcome";
 import { Route, Routes, Link } from "react-router-dom";
@@ -20,6 +21,8 @@ export function App () {
                 <Route path="/counter" element={<ClickCounter />} />
 
                 <Route path="/users/:username" element={<ShowGithubUser />} />
+
+                <Route path="*" element={<NotFound />} />
                 
             </Routes>
         </div>
