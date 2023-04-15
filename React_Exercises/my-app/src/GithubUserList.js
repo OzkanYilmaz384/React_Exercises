@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GithubUser } from "./GithubUser";
+import { Link } from "react-router-dom";
 
 export function GithubUserList() {
 
@@ -21,7 +21,7 @@ export function GithubUserList() {
                 <input type="text" name="input"></input>
                 <button>Add User Name!</button>
             </form>
-            {userNames.map((userName) => <GithubUser key={userName} username= {userName}/>) }
+            {userNames.map((userName, index) => <Link key={userName + index} to={`/users/${userName}`}>{userName}</Link>) }
         </div>
     )
 }

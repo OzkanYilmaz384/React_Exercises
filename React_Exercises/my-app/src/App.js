@@ -1,5 +1,6 @@
 
 import { ClickCounter } from "./ClickCounter";
+import { GithubUserList } from "./GithubUserList";
 import NotFound from "./NotFound";
 import ShowGithubUser from "./ShowGithubUser";
 import { Welcome } from "./Welcome";
@@ -13,7 +14,8 @@ export function App () {
             <ul>
                     <li><Link to="/">Home</Link> </li>
                     <li><Link to="/counter">Counter</Link></li>
-                    <li><Link to="/users/:username">User Name</Link></li>
+                    <li><Link to="/users/OzkanYilmaz384">OzkanYilmaz384</Link></li>
+                    <li><Link to="/users">Users</Link></li>
             </ul>
             <Routes>
                 <Route path="/" element={<Welcome name="John" />} />
@@ -21,6 +23,8 @@ export function App () {
                 <Route path="/counter" element={<ClickCounter />} />
 
                 <Route path="/users/:username" element={<ShowGithubUser />} />
+
+                <Route path="/users" element={<GithubUserList />} />
 
                 <Route path="*" element={<NotFound />} />
                 
